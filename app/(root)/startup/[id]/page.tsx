@@ -50,9 +50,9 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
                 className="rounded-full drop-shadow-lg"
               />
               <div>
-                <p className="text-20-medium">{startup.author.name}</p>
+                <p className="text-20-medium">{startup.author?.name}</p>
                 <p className="text-16-medium !text-black-300">
-                  @{startup.author.username}
+                  @{startup.author?.username}
                 </p>
               </div>
             </Link>
@@ -70,8 +70,8 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
         </div>
         <hr className="divider" />
       </section>
-      <Suspense fallback={<Skeleton className="view-skeleton"/>}>
-          <View id={id}/>
+      <Suspense fallback={<Skeleton className="view-skeleton" />}>
+        <View id={id} />
       </Suspense>
     </>
   );
